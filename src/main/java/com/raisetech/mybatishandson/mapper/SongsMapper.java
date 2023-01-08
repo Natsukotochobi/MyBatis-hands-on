@@ -12,7 +12,7 @@ public interface SongsMapper {
  @Select("SELECT * FROM songs")
  List<Songs> findAll();
 
- @Select("SELECT * FROM songs WHERE year = #{year}")
- Optional<Songs> findById();
+ @Select("SELECT title, artist FROM songs WHERE year = #{year}")
+ Optional<Songs> findById(int year);
 
 }
