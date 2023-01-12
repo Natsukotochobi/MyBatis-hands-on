@@ -2,6 +2,7 @@ package com.raisetech.mybatishandson.service;
 
 import com.raisetech.mybatishandson.entity.Songs;
 import com.raisetech.mybatishandson.mapper.SongsMapper;
+import org.apache.ibatis.javassist.NotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -21,7 +22,12 @@ public class SongsServiceImpl implements SongsService {
     }
 
     @Override
-    public Optional<Songs> findById(int year){
+    public Optional<Songs> findById(int year) throws NotFoundException {
+        Optional<Songs> songs = songsMapper.findById(year);
+        if (!songs.isPresent()){
+            String errorMessage = year + "年の曲は存在しません";
+            throw new NotFoundException(errorMessage);
+        }
         return songsMapper.findById(year);
     }
 }
