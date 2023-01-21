@@ -9,5 +9,5 @@ import java.util.Optional;
 public interface SongsService {
     List<Songs> findAll();
 
-    Optional<Songs> findById(int year) throws Exception;
+    Songs findSongsInfo(int year) throws Exception;
 }
