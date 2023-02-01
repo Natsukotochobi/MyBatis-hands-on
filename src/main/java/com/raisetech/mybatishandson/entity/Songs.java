@@ -31,20 +31,20 @@ public class Songs {
     public int getYear() {
         return year;
     }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public void setArtist(String artist) {
-        this.artist = artist;
-    }
-
-    public void setYear(int year) {
-        this.year = year;
-    }
+//
+//    public void setId(int id) {
+//        this.id = id;
+//    }
+//
+//    public void setTitle(String title) {
+//        this.title = title;
+//    }
+//
+//    public void setArtist(String artist) {
+//        this.artist = artist;
+//    }
+//
+//    public void setYear(int year) {
+//        this.year = year;
+//    }
 }
