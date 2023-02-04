@@ -28,8 +28,8 @@ public class SongsController {
         return songsService.findAll().stream().toList();
     }
 
-    @GetMapping("/songs/{published_year}")
-    public Optional<Songs> getSongsList(@PathVariable("published_year") int published_year) throws Exception {
+    @GetMapping("/search")
+    public Optional<Songs> getSongsList(@RequestParam("published_year") int published_year) throws Exception {
         return Optional.ofNullable(this.songsService.findSongsInfo(published_year));
     }
 
