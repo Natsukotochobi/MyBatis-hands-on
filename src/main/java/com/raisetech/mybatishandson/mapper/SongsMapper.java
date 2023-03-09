@@ -1,7 +1,9 @@
 package com.raisetech.mybatishandson.mapper;
 
 import com.raisetech.mybatishandson.entity.Songs;
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
@@ -14,5 +16,9 @@ public interface SongsMapper {
 
  @Select("SELECT * FROM songs WHERE year = #{year}")
  Optional<Songs> findById(int year);
+
+ @Insert("INSERT INTO songs(title, artist, year) VALUES (#{title}, #{artist}, #{year})")
+ @Options(useGeneratedKeys = true, keyColumn = "id")
+ void save(Songs songs);
 
 }

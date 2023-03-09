@@ -10,4 +10,6 @@ public interface SongsService {
     List<Songs> findAll();
 
     Songs findSongsInfo(int year) throws Exception;
+
+    void save(Songs songs);
 }

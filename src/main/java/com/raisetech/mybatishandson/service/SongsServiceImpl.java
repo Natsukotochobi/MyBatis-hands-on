@@ -31,4 +31,10 @@ public class SongsServiceImpl implements SongsService {
             throw new ResourceNotFoundException("resource not found");
         }
     }
+    @Override
+    public void save(Songs songs){
+        songsMapper.save(songs);
+    }
+
+
 }

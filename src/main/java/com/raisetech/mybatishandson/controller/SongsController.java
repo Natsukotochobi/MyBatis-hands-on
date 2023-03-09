@@ -43,4 +43,8 @@ public class SongsController {
                 "path", request.getRequestURI());
         return new ResponseEntity(body, HttpStatus.NOT_FOUND);
     }
+    @PostMapping("/create")
+    public void create(@RequestBody Songs songs){
+        songsService.save(songs);
+    }
 }
